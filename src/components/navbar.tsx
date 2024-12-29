@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavigationMenuDemo } from "./navLinks";
