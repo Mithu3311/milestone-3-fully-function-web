@@ -22,7 +22,7 @@ const BestSelling = () => {
       products: "royalcopy",
     },
     {
-      src: "/pictures/duxshorpner.webp",
+      src: "/pictures/duxshorpner.jpg",
       alt: "Dux Shorpner",
       title: "Dux Pencil Sharpeners Jar Of 50 Pcs, Art # 502",
       discription: "Plastic manual sharpeners with metal blade.",
