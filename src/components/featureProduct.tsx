@@ -66,7 +66,7 @@ const FeatureProduct = () => {
     },
   ];
   // carousel setting
-  var settings = {
+  const settings = {
     dots: true,
     arrows: false,
     infinite: true,
