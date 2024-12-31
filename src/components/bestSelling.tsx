@@ -44,7 +44,7 @@ const BestSelling = () => {
       {/* Best Selling Products Here */}
       <div className="flex flex-wrap justify-center gap-5">
         {
-          bestSell.map((items,i)=>(
+          bestSell.map((items)=>(
             <BestSellingCard src={items.src} alt={items.alt} title={items.title} discription={items.discription} price={items.price}/>
           ))
         }
