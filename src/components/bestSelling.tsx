@@ -1,34 +1,36 @@
 import BestSellingCard from "./bestSellingCard";
 
-
 const BestSelling = () => {
   const bestSell = [
     {
-      src:"/pictures/duxpencil1.jpg",
+      src: "/pictures/duxpencil1.jpg",
       alt: "Dux pencil",
       title: "Dux Pencil 999 Super",
-      discription: "Introducing the Dux Pencil 999 the perfect blend of quality and durability.",
+      discription:
+        "Introducing the Dux Pencil 999 the perfect blend of quality and durability.",
       price: 270,
-
+      category: "stationary",
+      products: "dux pencil",
     },
     {
-      src:"/pictures/royalcopy.jpg",
+      src: "/pictures/royalcopy.jpg",
       alt: "Royal Metso",
       title: "Royal Metso Note Book Copy 300#",
       discription: "150 Pages Double Side Countable.",
       price: 70,
-
+      category: "stationary",
+      products: "royalcopy",
     },
     {
-      src:"/pictures/duxshorpner.webp",
+      src: "/pictures/duxshorpner.webp",
       alt: "Dux Shorpner",
       title: "Dux Pencil Sharpeners Jar Of 50 Pcs, Art # 502",
       discription: "Plastic manual sharpeners with metal blade.",
       price: 660,
-
+      category: "stationary",
+      products: "shorpner",
     },
-    
-  ]
+  ];
   return (
     <div className="mb-[100px] mt-[100px]">
       {/* Heading */}
@@ -43,19 +45,19 @@ const BestSelling = () => {
 
       {/* Best Selling Products Here */}
       <div className="flex flex-wrap justify-center gap-5">
-        {
-          bestSell.map((items, i)=>(
-            <BestSellingCard
-            key={i} 
-            src={items.src} 
-            alt={items.alt} 
-            title={items.title} 
-            discription={items.discription} 
-            price={items.price}/>
-          ))
-        }
+        {bestSell.map((items, i) => (
+          <BestSellingCard
+            key={i}
+            src={items.src}
+            alt={items.alt}
+            title={items.title}
+            discription={items.discription}
+            price={items.price}
+            category={items.category}
+            products={items.products}
+          />
+        ))}
       </div>
-      
     </div>
   );
 };
