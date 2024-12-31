@@ -23,7 +23,7 @@ const ProductsComponent = () => {
                 alt='Picture' 
                 width={60} 
                 height={60}
-                onClick={() => setPath("/pictures/duxshorpner.webp")}
+                onClick={() => setPath("/pictures/duxshorpner.jpg")}
                 />
             </div>
             <div className='cursor-pointer w-16 h-16'>
