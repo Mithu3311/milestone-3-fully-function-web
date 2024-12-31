@@ -23,7 +23,7 @@ const BestSellingCard = ({
   products: string;
 }) => {
   return (
-    <div className="w-[350px] h-[35rem] p-4 mx-auto shadow-lg rounded-xl relative group">
+    <div className="max-w-[350px] h-[35rem] p-4 mx-auto shadow-lg rounded-xl relative group">
       <Link href={`/${category}/${products}`}>
         {/* Image div */}
         <div className="block h-[23rem] rounded overflow-hidden">
