@@ -51,10 +51,10 @@ const Products = () => {
             {/* Discription */}
             <p className="mt-2 leading-relaxed scroll-m-20 text-base font-normal text-myBlackPara">
               Introducing the Dux Pencil 999 the perfect blend of quality and
-              durability.Its lead is fully bonded to the real soft wood, for a
-              strong writing experience that won't break easily. Great for
-              writing, sketching, and other activities, its high-grade graphite
-              lead is also non-toxic and doesn't contain rainforest wood. Get
+              durability Its lead is fully bonded to the real soft wood for a
+              strong writing experience that wont break easily Great for
+              writing sketching and other activities its high-grade graphite
+              lead is also non-toxic and does not contain rainforest wood Get
               the quality you can count on!
             </p>
             <div className="flex items-center mt-3">
