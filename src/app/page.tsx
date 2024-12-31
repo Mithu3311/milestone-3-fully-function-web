@@ -1,3 +1,4 @@
+import BestSelling from '@/components/bestSelling'
 import Categories from '@/components/categories'
 import Hero from '@/components/hero'
 import Promotion from '@/components/promotion'
@@ -10,7 +11,8 @@ const Home = () => {
       <Hero />
       <Services />
       <Promotion />
-      <Categories/>
+      <Categories />
+      <BestSelling />
     </div>
   )
 }

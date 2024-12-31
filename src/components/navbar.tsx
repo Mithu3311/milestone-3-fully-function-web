@@ -2,6 +2,7 @@ import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { NavigationMenuDemo } from "./navLinks";
 import Image from "next/image";
+import { NavigationMenuDemo1 } from "./links";
 
 const Navbar = () => {
   return (
@@ -16,7 +17,7 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-              <NavigationMenuDemo />
+              <NavigationMenuDemo1 />
             </ul>
           </div>
           <Image src={"/pictures/logo.png"} alt="Logo" width={120} height={25} className="lg:flex hidden pl-4"/>

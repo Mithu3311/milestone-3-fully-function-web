@@ -45,10 +45,10 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
-export function NavigationMenuDemo() {
+export function NavigationMenuDemo1() {
   return (
     <NavigationMenu>
-      <NavigationMenuList>
+      <NavigationMenuList className="flex flex-col">
       <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -59,7 +59,7 @@ export function NavigationMenuDemo() {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Our Services</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="bg-myWhite grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+            <ul className="bg-myWhite grid w-[200px] gap-3 p-4 md:w-[200px] md:grid-cols-2 lg:w-[100px]">
               {components.map((component) => (
                 <ListItem
                   key={component.title}

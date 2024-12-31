@@ -16,6 +16,7 @@ const Categories = () => {
       </div>
       {/* Categories Starts from Here */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:grid-cols-2">
+        
         {/* Category 1 */}
         <div className="mb-7 lg:mb-0 overflow-hidden z-10 mx-auto group relative">
             <Link href={'#'}>
@@ -26,7 +27,11 @@ const Categories = () => {
             height={350}
             className="rounded-xl duration-500 group-hover:scale-125"
           />
-          <div className="absolute -bottom-24 group-hover:bottom-0 duration-500 scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl bg-myBlackHead/70 text-center text-myWhite w-full">
+          <div className="hidden lg:block absolute -bottom-24 group-hover:bottom-2 duration-500 scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl bg-myBlackHead/70 text-center text-myWhite w-full">
+            <h1 className="uppercase">Stationary</h1>
+          </div>
+
+          <div className="block lg:hidden absolute bottom-5 duration-500 z-[100]scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl bg-myBlackHead/70 text-center text-myWhite w-full">
             <h1 className="uppercase">Stationary</h1>
           </div>
           </Link>
@@ -42,7 +47,11 @@ const Categories = () => {
             height={350}
             className="rounded-xl duration-500 group-hover:scale-125"
           />
-          <div className="absolute -bottom-24 group-hover:bottom-0 duration-500 scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl bg-myBlackHead/70 text-center text-myWhite w-full">
+          <div className="hidden lg:block absolute -bottom-24 group-hover:bottom-2 duration-500 scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl bg-myBlackHead/70 text-center text-myWhite w-full">
+            <h1 className="uppercase">Sports</h1>
+          </div>
+
+          <div className="block lg:hidden absolute bottom-5 duration-500 z-[100]scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl bg-myBlackHead/70 text-center text-myWhite w-full">
             <h1 className="uppercase">Sports</h1>
           </div>
           </Link>
@@ -58,7 +67,11 @@ const Categories = () => {
             height={350}
             className="rounded-xl duration-500 group-hover:scale-125"
           />
-          <div className="absolute -bottom-24 group-hover:bottom-0 duration-500 scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl bg-myBlackHead/70 text-center text-myWhite w-full">
+          <div className="hidden lg:block absolute -bottom-24 group-hover:bottom-2 duration-500 scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl bg-myBlackHead/70 text-center text-myWhite w-full">
+            <h1 className="uppercase">Electronics</h1>
+          </div>
+
+          <div className="block lg:hidden absolute bottom-5 duration-500 z-[100]scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl bg-myBlackHead/70 text-center text-myWhite w-full">
             <h1 className="uppercase">Electronics</h1>
           </div>
           </Link>
@@ -74,7 +87,11 @@ const Categories = () => {
             height={350}
             className="rounded-xl duration-500 group-hover:scale-125"
           />
-          <div className="absolute -bottom-24 group-hover:bottom-0 duration-500 scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl bg-myBlackHead/70 text-center text-myWhite w-full">
+          <div className="hidden lg:block absolute -bottom-24 group-hover:bottom-2 duration-500 scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl bg-myBlackHead/70 text-center text-myWhite w-full">
+            <h1 className="uppercase">Photo Studio</h1>
+          </div>
+
+          <div className="block lg:hidden absolute bottom-5 duration-500 z-[100]scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-3xl bg-myBlackHead/70 text-center text-myWhite w-full">
             <h1 className="uppercase">Photo Studio</h1>
           </div>
           </Link>
