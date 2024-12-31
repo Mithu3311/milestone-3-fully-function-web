@@ -55,7 +55,7 @@ const FeatureProduct = () => {
       products: "Highlighter",
     },
     {
-      src: "/pictures/inkpen.jpg",
+      src: "/pictures/inkpen.webp",
       alt: "inkpen",
       title: "Fountain Pen",
       discription:
