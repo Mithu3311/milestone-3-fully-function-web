@@ -10,11 +10,17 @@ export const cartSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
+    // Add to Cart functionalty
+    addToCart(state,action){
+      let uuid = Math.floor(1000+Math.random()*9000);
+      let newObj = {...action.payload,uuid};
+      state.push(newObj);
+    }
 
   },
 })
 
-export const { } = cartSlice.actions
+export const { addToCart } = cartSlice.actions
 
 
 export default cartSlice.reducer

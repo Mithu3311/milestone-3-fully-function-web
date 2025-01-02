@@ -1,6 +1,7 @@
 'use client'
 import { useAppSelector } from "@/app/store/hooks";
 import BestSellingCard from "./bestSellingCard";
+import { Product } from "@/app/utils/types";
 
 const BestSelling = () => {
   const product = useAppSelector((state) => state.products);
@@ -49,7 +50,7 @@ const BestSelling = () => {
 
       {/* Best Selling Products Here */}
       <div className="flex flex-wrap justify-center gap-5">
-        {bestSell.map((items:any, i) => (
+        {bestSell.map((items:Product, i) => (
           <BestSellingCard
             key={i}
             src={items.image[0]}
