@@ -24,7 +24,7 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Electronic",
-    href: "/elctronic",
+    href: "/electronic",
     description: "Electronics Accessories & Supplies",
   },
   {

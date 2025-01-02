@@ -14,3 +14,8 @@
 .promo-2 {
   background-image: url('../../public/pictures/promo-2.webp');
 }
+
+.myDiscount {
+  transform: rotate(-90deg) translate(10px, -69px);
+  transform-origin: 100%;
+}

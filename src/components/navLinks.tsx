@@ -15,7 +15,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const components: { title: string; href: string; description: string }[] = [
+const components: { title: string; href: string; description: string; }[] = [
   {
     title: "Stationary",
     href: "/stationary",
@@ -24,7 +24,7 @@ const components: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Electronic",
-    href: "/elctronic",
+    href: "/electronic",
     description: "Electronics Accessories & Supplies",
   },
   {

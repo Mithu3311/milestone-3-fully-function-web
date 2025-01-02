@@ -4,67 +4,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import BestSellingCard from "./bestSellingCard";
+import { useAppSelector } from "@/app/store/hooks";
 
 const FeatureProduct = () => {
   // myData
-  const bestSell = [
-    {
-      src: "/pictures/duxpencil1.jpg",
-      alt: "Dux pencil",
-      title: "Dux Pencil 999 Super",
-      discription:
-        "Introducing the Dux Pencil 999 the perfect blend of quality and durability.",
-      price: 270,
-      category: "stationary",
-      products: "dux pencil",
-    },
-    {
-      src: "/pictures/royalcopy.jpg",
-      alt: "Royal Metso",
-      title: "Royal Metso Note Book Copy 300#",
-      discription: "150 Pages Double Side Countable.",
-      price: 70,
-      category: "stationary",
-      products: "royalcopy",
-    },
-    {
-      src: "/pictures/duxshorpner.jpg",
-      alt: "Dux Shorpner",
-      title: "Dux Pencil Sharpeners Jar Of 50 Pcs, Art # 502",
-      discription: "Plastic manual sharpeners with metal blade.",
-      price: 660,
-      category: "stationary",
-      products: "shorpner",
-    },
-    {
-      src: "/pictures/eraser.jpg",
-      alt: "Dux eraser",
-      title: "DUX ERASER 2001",
-      discription: "DUX Pencil Eraser",
-      price: 660,
-      category: "stationary",
-      products: "dux eraser",
-    },
-    {
-      src: "/pictures/highlighter.jpg",
-      alt: "Highlighter",
-      title: "Yalong Pastel Color Macaron Highlighter",
-      discription: "Macaron Pastel Color Highlighter",
-      price: 125,
-      category: "stationary",
-      products: "Highlighter",
-    },
-    {
-      src: "/pictures/inkpen.webp",
-      alt: "inkpen",
-      title: "Fountain Pen",
-      discription:
-        "Fountain pen with an attractive stylish design and a large ink storag",
-      price: 159,
-      category: "stationary",
-      products: "Inkpen",
-    },
-  ];
+  const product = useAppSelector((state) => state.products.slice(0, 9));
+  const bestSell =product
   // carousel setting
   const settings = {
     dots: true,
@@ -120,16 +65,17 @@ const FeatureProduct = () => {
       </div>
       {/* Carousel */}
       <Slider {...settings}>
-        {bestSell.map((items, i) => (
+        {bestSell.map((items:any, i) => (
           <BestSellingCard
             key={i}
-            src={items.src}
-            alt={items.alt}
+            src={items.image[0]}
+            alt={items.title}
             title={items.title}
             discription={items.discription}
             price={items.price}
             category={items.category}
-            products={items.products}
+            slug={items.slug}
+            discount={items.discount}
           />
         ))}
       </Slider>

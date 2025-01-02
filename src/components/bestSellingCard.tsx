@@ -12,7 +12,8 @@ const BestSellingCard = ({
   discription,
   price,
   category,
-  products,
+  slug,
+  discount,
 }: {
   src: string;
   alt: string;
@@ -20,11 +21,12 @@ const BestSellingCard = ({
   discription: string;
   price: number;
   category: string;
-  products: string;
+  slug: string;
+  discount: number;
 }) => {
   return (
     <div className="max-w-[350px] h-[35rem] p-4 mx-auto shadow-lg rounded-xl relative group">
-      <Link href={`/${category}/${products}`}>
+      <Link href={`/${category}/${slug}`}>
         {/* Image div */}
         <div className="block h-[23rem] rounded overflow-hidden">
           <Image src={src} width={400} height={400} alt={alt} />
@@ -42,9 +44,15 @@ const BestSellingCard = ({
             </p>
           )}
           {price && (
-            <p className="mt-2 scroll-m-20 text-base font-semibold tracking-tight text-myBlackHead line-clamp-1">
+            <div className="flex gap-4">
+              <p className={`mt-2 scroll-m-20 text-base font-semibold tracking-tight text-myBlackHead line-clamp-1 ${discount>0 && "line-through decoration-2 decoration-myOrange/70"}`}>
               Rs.{price} PKR
             </p>
+            {/* Discounted Value */}
+            {discount>0 && (<p className="mt-2 scroll-m-20 text-base font-semibold tracking-tight text-myBlackHead line-clamp-1">
+            Rs.{price - ((price*discount) / 100)} PKR
+          </p>)}
+          </div>
           )}
         </div>
       </Link>
@@ -58,6 +66,9 @@ const BestSellingCard = ({
           <FaHeart className="m-2 h-4 w-4 group-hover:text-myOrange duration-300" />
           Buy Now
         </Button>
+        {discount > 0 && (
+          <div className="scroll-m-20 text-xs font-semibold tracking-tight text-myWhite bg-myOrange absolute top-0 left-2 w-[87px] p-2 text-center uppercase rounded-tl-xl rounded-bl-xl myDiscount">{`${discount}% off`}</div>
+        )}
       </div>
     </div>
   );

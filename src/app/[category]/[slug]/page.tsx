@@ -1,61 +1,33 @@
-import ProductsComponent from "@/components/productsComponent";
-import { Button } from "@/components/ui/button";
+"use client";
 import React from "react";
+import SlugComponent from "@/components/slugComponent";
+import { Button } from "@/components/ui/button";
 import { FaHeart, FaPlus, FaMinus } from "react-icons/fa";
 import { HiShoppingCart } from "react-icons/hi";
+import { useAppSelector } from "../../store/hooks";
 
-const Products = () => {
+const Products = ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug: slugParam } = React.use(params); // Unwrap params
+  const product = useAppSelector((state) => state.products);
+  const slug = product.filter((val) => val.slug === slugParam);
+
   return (
     <section className="text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
-          <ProductsComponent />
-          {/* Category */}
+          <SlugComponent image={slug[0]?.image} />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-            <h2 className="scroll-m-20 text-sm font-semibold text-myBlackPara tracking-tight">
-              Stationary Items
+            <h2 className="scroll-m-20 text-sm font-semibold text-myBlackPara tracking-tight uppercase">
+              {slug[0]?.category || "Unknown Category"}
             </h2>
-            {/* Title */}
             <h1 className="mt-2 scroll-m-20 text-2xl font-bold tracking-tight mb-1 text-myBlackHead">
-              Dux Pencil 999 Super
+              {slug[0]?.title || "Unknown Product"}
             </h1>
-            {/* Ratings */}
             <div className="rating rating-sm mt-2">
-              <input
-                type="radio"
-                name="rating-6"
-                className="mask mask-star-2 bg-myOrange"
-              />
-              <input
-                type="radio"
-                name="rating-6"
-                className="mask mask-star-2 bg-myOrange"
-                defaultChecked
-              />
-              <input
-                type="radio"
-                name="rating-6"
-                className="mask mask-star-2 bg-myOrange"
-              />
-              <input
-                type="radio"
-                name="rating-6"
-                className="mask mask-star-2 bg-myOrange"
-              />
-              <input
-                type="radio"
-                name="rating-6"
-                className="mask mask-star-2 bg-myOrange"
-              />
+              {/* Ratings Component */}
             </div>
-            {/* Discription */}
             <p className="mt-2 leading-relaxed scroll-m-20 text-base font-normal text-myBlackPara">
-              Introducing the Dux Pencil 999 the perfect blend of quality and
-              durability Its lead is fully bonded to the real soft wood for a
-              strong writing experience that wont break easily Great for
-              writing sketching and other activities its high-grade graphite
-              lead is also non-toxic and does not contain rainforest wood Get
-              the quality you can count on!
+              {slug[0]?.discription || "No description available"}
             </p>
             <div className="flex items-center mt-3">
               <h2 className="scroll-m-20 text-base font-semibold text-myBlackHead tracking-tight mr-3">
@@ -66,21 +38,30 @@ const Products = () => {
                 Less
               </Button>
               <div className="mr-2 ml-2 scroll-m-20 text-base font-semibold tracking-tight">
-                1
+                {slug[0]?.qty || 1}
               </div>
               <Button className="group bg-myBlackHead hover:bg-transparent text-myWhite hover:text-myBlackHead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl duration-300">
                 <FaPlus className="m-2 h-4 w-4 group-hover:text-myOrange duration-300" />
                 Add
               </Button>
             </div>
-            {/* divider */}
             <div className="divider"></div>
-            {/* Price */}
             <div className="flex items-center justify-between">
-              <span className="title-font font-medium text-2xl text-gray-900">
-                $58.00
-              </span>
-              {/* Buttons div */}
+              <div className="flex items-center">
+                <span className="title-font font-medium text-xl text-gray-900">
+                  Rs.{slug[0]?.price || "N/A"}
+                </span>
+                {/* Discounted Value */}
+                {product[0] &&
+                  typeof slug[0].price === "number" &&
+                  typeof slug[0].discount === "number" &&
+                  slug[0].discount > 0 && (
+                    <span className="ml-5 title-font font-medium text-xl text-gray-900">
+                      Rs.
+                      {slug[0].price - (slug[0].price * slug[0].discount) / 100}
+                    </span>
+                  )}
+              </div>
               <div>
                 <Button className="group bg-myBlackHead hover:bg-transparent text-myWhite hover:text-myBlackHead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl duration-300">
                   <HiShoppingCart className="m-2 h-4 w-4 group-hover:text-myOrange duration-300" />
