@@ -22,12 +22,12 @@ export const cartSlice = createSlice({
     },
     // Addition of item
     addCart(state,action){
-    let obj = state.find(
+    const obj = state.find(
       (val) => 
       val.id == action.payload.id);
       if(obj) {
       ++obj.qty;
-      let newState = state.filter((val)=>val.id !== obj?.id)
+      const newState = state.filter((val)=>val.id !== obj?.id)
       state = [...newState, obj];
       return;
     }
@@ -35,14 +35,14 @@ export const cartSlice = createSlice({
 
   // Subtraction of item
   subtractCart(state,action){
-    let obj = state.find(
+    const obj = state.find(
       (val) => val.id == action.payload.id);
     if (obj !== undefined){
       if(obj.qty<=1){
         return state.filter((val)=> val.uuid !== obj?.uuid)
       }
       --obj.qty;
-      let newState = state.filter((val) => val.uuid == obj?.uuid);
+      const newState = state.filter((val) => val.uuid == obj?.uuid);
       state = [...newState, obj]
       return;
   }
