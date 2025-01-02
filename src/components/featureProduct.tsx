@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import BestSellingCard from "./bestSellingCard";
 import { useAppSelector } from "@/app/store/hooks";
+import { Product } from "@/app/utils/types";
 
 const FeatureProduct = () => {
   // myData
@@ -65,7 +66,7 @@ const FeatureProduct = () => {
       </div>
       {/* Carousel */}
       <Slider {...settings}>
-        {bestSell.map((items:any, i) => (
+        {bestSell.map((items:Product, i) => (
           <BestSellingCard
             key={i}
             src={items.image[0]}

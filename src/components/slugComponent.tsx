@@ -13,7 +13,7 @@ const SlugComponent = ({image}:string|string[]|StaticImageData|any) => {
       height={400}
       />
         <div className='flex items-center justify-evenly mx-auto mt-2'>
-          {image.map((item:string, i:number )=>(
+          {image.map((item:string, i:number)=>(
             <div key={i} className='cursor-pointer w-16 h-16'>
             <Image 
             src={item} 
