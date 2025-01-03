@@ -6,10 +6,27 @@ import { addToCart } from "@/app/store/features/cart";
 import { useAppDispatch } from "@/app/store/hooks";
 import { HiShoppingCart } from "react-icons/hi";
 
-const AddToCartToast = ({ cartItem }: any) => {
+// Define the type for cartItem
+type CartItemType = {
+  id: number;
+  title: string;
+  image: string[];
+  slug: string;
+  price: number;
+  discount: number;
+  category: string;
+  qty: number;
+};
+
+type AddToCartToastProps = {
+  cartItem: CartItemType;
+};
+
+const AddToCartToast: React.FC<AddToCartToastProps> = ({ cartItem }) => {
   const dispatch = useAppDispatch();
+
   const notify = () =>
-    toast.success("Product Added Successfuly", {
+    toast.success("Product Added Successfully", {
       position: "top-center",
       autoClose: 500,
       hideProgressBar: false,
@@ -23,8 +40,6 @@ const AddToCartToast = ({ cartItem }: any) => {
   return (
     <>
       <div className="w-full" onClick={() => dispatch(addToCart(cartItem))}>
-        {/* <button onClick={notify}>Notify!</button> */}
-
         <Button
           onClick={notify}
           className="group bg-myBlackHead hover:bg-transparent text-myWhite hover:text-myBlackHead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl duration-300"
