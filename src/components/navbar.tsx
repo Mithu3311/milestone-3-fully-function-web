@@ -24,10 +24,10 @@ const Navbar = () => {
               <NavigationMenuDemo1 />
             </ul>
           </div>
-          <Image src={"/pictures/myLogo.png"} alt="Logo" width={200} height={60} className="lg:flex hidden pl-4"/>
+          <Image src={"/pictures/myLogo.png"} alt="Logo" width={250} height={60} className="lg:flex hidden pl-4"/>
         </div>
         <div className="navbar-center">
-        <Image src={"/pictures/myLogo.png"} alt="Logo" width={200} height={60} className="flex lg:hidden"/>
+        <Image src={"/pictures/myLogo.png"} alt="Logo" width={150} height={50} className="flex lg:hidden"/>
 
           <div className="hidden lg:flex">
             <NavigationMenuDemo />

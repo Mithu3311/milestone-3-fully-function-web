@@ -19,12 +19,12 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href={"#"} className="text-base font-semibold tracking-tight text-myBlackPara hover:text-myBlackPara/70">
+                  <Link href={"/about"} className="text-base font-semibold tracking-tight text-myBlackPara hover:text-myBlackPara/70">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link href={"#"} className="text-base font-semibold tracking-tight text-myBlackPara hover:text-myBlackPara/70">
+                  <Link href={"contact"} className="text-base font-semibold tracking-tight text-myBlackPara hover:text-myBlackPara/70">
                     Contact Us
                   </Link>
                 </li>
@@ -113,7 +113,7 @@ const Footer = () => {
         <div>
           <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
             <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-              <Image src={"/pictures/logo.png"} alt="Logo" width={120} height={25}/>
+              <Image src={"/pictures/myLogo.png"} alt="Logo" width={200} height={60}/>
             </a>
             <p className="sm:ml-6 sm:mt-0 mt-4 cursor-pointer text-xs font-semibold tracking-tight text-myBlackPara hover:text-myBlackPara/70">
               © 2024 sindh-computers-naukot  —

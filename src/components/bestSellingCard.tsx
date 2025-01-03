@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import { Button } from "./ui/button";
-import { HiShoppingCart } from "react-icons/hi";
 import { FaHeart } from "react-icons/fa";
 import Link from "next/link";
+import BestSellingCardAddToCart from "./bestSellingCardAddToCart";
 
 const BestSellingCard = ({
   src,
@@ -23,55 +23,52 @@ const BestSellingCard = ({
   category: string;
   slug: string;
   discount: number;
-}) => {
-  return (
-    <div className="max-w-[350px] h-[35rem] p-4 mx-auto shadow-lg rounded-xl relative group">
-      <Link href={`/${category}/${slug}`}>
-        {/* Image div */}
-        <div className="block h-[23rem] rounded overflow-hidden">
-          <Image src={src} width={400} height={400} alt={alt} />
-        </div>
-        {/* Typography div */}
-        <div className="mt-4">
-          {title && (
-            <h2 className="scroll-m-20 border-b text-lg font-semibold tracking-tight first:mt-0 text-myBlackHead line-clamp-1">
-              {title}
-            </h2>
-          )}
-          {discription && (
-            <p className="mt-2 scroll-m-20 pt-2 text-sm font-semibold tracking-tight text-myBlackPara line-clamp-1">
-              {discription}
-            </p>
-          )}
-          {price && (
-            <div className="flex gap-4">
-              <p className={`mt-2 scroll-m-20 text-base font-semibold tracking-tight text-myBlackHead line-clamp-1 ${discount>0 && "line-through decoration-2 decoration-myOrange/70"}`}>
+}) => (
+  <div className="max-w-[350px] h-[35rem] p-4 mx-auto shadow-lg rounded-xl relative group">
+    <Link href={`/${category}/${slug}`}>
+      {/* Image div */}
+      <div className="block h-[23rem] rounded overflow-hidden">
+        <Image src={src} width={400} height={400} alt={alt} />
+      </div>
+      {/* Typography div */}
+      <div className="mt-4">
+        {title && (
+          <h2 className="scroll-m-20 border-b text-lg font-semibold tracking-tight first:mt-0 text-myBlackHead line-clamp-1">
+            {title}
+          </h2>
+        )}
+        {discription && (
+          <p className="mt-2 scroll-m-20 pt-2 text-sm font-semibold tracking-tight text-myBlackPara line-clamp-1">
+            {discription}
+          </p>
+        )}
+        {price && (
+          <div className="flex gap-4">
+            <p className={`mt-2 scroll-m-20 text-base font-semibold tracking-tight text-myBlackHead line-clamp-1 ${discount > 0 && "line-through decoration-2 decoration-myOrange/70"}`}>
               Rs.{price} PKR
             </p>
             {/* Discounted Value */}
-            {discount>0 && (<p className="mt-2 scroll-m-20 text-base font-semibold tracking-tight text-myBlackHead line-clamp-1">
-            Rs.{price - ((price*discount) / 100)} PKR
-          </p>)}
+            {discount > 0 && (<p className="mt-2 scroll-m-20 text-base font-semibold tracking-tight text-myBlackHead line-clamp-1">
+              Rs.{price - ((price * discount) / 100)} PKR
+            </p>)}
           </div>
-          )}
-        </div>
-      </Link>
-      {/* Buttons div */}
-      <div>
-        <Button className="group bg-myBlackHead hover:bg-transparent text-myWhite hover:text-myBlackHead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl absolute bottom-2 right-2 duration-300">
-          <HiShoppingCart className="m-2 h-4 w-4 group-hover:text-myOrange duration-300" />
-          Add to Cart
-        </Button>
-        <Button className="group bg-myBlackHead hover:bg-transparent text-myWhite hover:text-myBlackHead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl absolute bottom-2 left-2 duration-300">
-          <FaHeart className="m-2 h-4 w-4 group-hover:text-myOrange duration-300" />
-          Buy Now
-        </Button>
-        {discount > 0 && (
-          <div className="scroll-m-20 text-xs font-semibold tracking-tight text-myWhite bg-myOrange absolute top-0 left-2 w-[87px] p-2 text-center uppercase rounded-tl-xl rounded-bl-xl myDiscount">{`${discount}% off`}</div>
         )}
       </div>
+    </Link>
+    {/* Buttons div */}
+    <div>
+      <div className="absolute bottom-2 right-2 duration-300">
+        <BestSellingCardAddToCart slug={slug}/>
+      </div>
+      <Button className="group bg-myBlackHead hover:bg-transparent text-myWhite hover:text-myBlackHead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl absolute bottom-2 left-2 duration-300">
+        <FaHeart className="m-2 h-4 w-4 group-hover:text-myOrange duration-300" />
+        Buy Now
+      </Button>
+      {discount > 0 && (
+        <div className="scroll-m-20 text-xs font-semibold tracking-tight text-myWhite bg-myOrange absolute top-0 left-2 w-[87px] p-2 text-center uppercase rounded-tl-xl rounded-bl-xl myDiscount">{`${discount}% off`}</div>
+      )}
     </div>
-  );
-};
+  </div>
+);
 
 export default BestSellingCard;

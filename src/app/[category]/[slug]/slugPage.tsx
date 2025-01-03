@@ -3,15 +3,14 @@ import React, { useState } from "react";
 import SlugComponent from "@/components/slugComponent";
 import { Button } from "@/components/ui/button";
 import { FaHeart, FaPlus, FaMinus } from "react-icons/fa";
-import { HiShoppingCart } from "react-icons/hi";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { addToCart } from "@/app/store/features/cart";
+import { useAppSelector } from "../../store/hooks";
+import AddToCartToast from "@/components/addToCartToast";
 
 const SlugPage = ({ params }: { params: Promise<{ slug: string }> }) => {
     const { slug: slugParam } = React.use(params); // Unwrap params
   const product = useAppSelector((state) => state.products);
   const slug = product.filter((val) => val.slug === slugParam);
-  const dispatch = useAppDispatch()
+  
   const [cartItem, setCartItem] = useState({
         id:slug[0].id,
         title:slug[0].title,
@@ -70,10 +69,7 @@ const SlugPage = ({ params }: { params: Promise<{ slug: string }> }) => {
                   )}
               </div>
               <div>
-                <Button onClick={() =>dispatch(addToCart(cartItem))} className="group bg-myBlackHead hover:bg-transparent text-myWhite hover:text-myBlackHead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl duration-300">
-                  <HiShoppingCart className="m-2 h-4 w-4 group-hover:text-myOrange duration-300" />
-                  Add to Cart
-                </Button>
+                <AddToCartToast cartItem = {cartItem}/>
               </div>
             </div>
             <Button className="mt-3 w-full group bg-myBlackHead hover:bg-transparent text-myWhite hover:text-myBlackHead scroll-m-20 text-xs font-semibold tracking-tight rounded-xl duration-300">
