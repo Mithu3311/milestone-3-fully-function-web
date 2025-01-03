@@ -9,7 +9,7 @@ import { addToCart } from '@/app/store/features/cart';
 const BestSellingCardAddToCart = ({ slug }:{ slug: string }) => {
     const dispatch = useAppDispatch();
     const product = useAppSelector((state) => state.products).find((val)=>val.slug==slug);
-    const [cartItem, setCartItem] = useState({
+    const [cartItem] = useState({
             id:product?.id,
             title:product?.title,
             image: product?.image,
