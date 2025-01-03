@@ -22,7 +22,7 @@ type AddToCartToastProps = {
   cartItem: CartItemType;
 };
 
-const AddToCartToast: React.FC<AddToCartToastProps> = ({ cartItem }) => {
+const AddToCartToast = ({ cartItem }:AddToCartToastProps) => {
   const dispatch = useAppDispatch();
 
   const notify = () =>
